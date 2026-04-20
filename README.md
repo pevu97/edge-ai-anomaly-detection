@@ -187,7 +187,7 @@ Example results:
 
 ## 📬 Contact
 
-Author: **[Your Name]**
+Author: **[Pevu]**
 GitHub: https://github.com/pevu97
 
 ---
