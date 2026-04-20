@@ -59,14 +59,17 @@ generate_report.py
 
 ```
 .
-├── config.py
+├── data/
+├── inference results/
+    └── inference_records.json
+    └── inference_summary.json
+├── report/
 ├── run_inference.py
 ├── simulate_transmission.py
 ├── generate_report.py
 ├── requirements.txt
 │
-├── data/
-│   └── sample_images/
+│   
 │
 ├── ae_results/
 │   └── best_autoencoder.pth
