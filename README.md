@@ -79,6 +79,39 @@ generate_report.py
 
 ---
 
+## 🧪 Demo Dataset
+
+The model was developed and evaluated using images from NASA's Perseverance rover (Mars 2020 mission), specifically NAVCAM (Navigation Camera) data.
+
+### Dataset Characteristics
+
+- Source: NASA PDS Imaging Atlas  
+- Camera: NAVCAM (left/right)  
+- Image type: mostly grayscale navigation images  
+- Resolution: typically ~1024×1024 (resized to 256×256 for training)  
+- Dataset size: ~50,000 images (filtered and deduplicated)  
+
+### Preprocessing
+
+- near-duplicate removal (perceptual hashing)  
+- grayscale normalization  
+- filtering of unusable frames (e.g., rover-dominant or ground-only images)  
+
+### Demo Data
+
+The repository includes a small sample dataset for demonstration purposes.
+
+Full experiments were conducted on a significantly larger dataset (~50k images), which is not included due to size constraints.
+
+### ⚠️ Reproducing Full-Scale Experiments
+
+To replicate results at full scale or extend the dataset, users must download additional NAVCAM images directly from the official NASA dataset.
+
+
+Due to bandwidth and storage limitations, the repository does not host the full dataset.
+
+---
+
 ## ▶️ Quick Start
 
 ### 1. Clone repository
@@ -145,38 +178,6 @@ After execution:
 * comparison tables
 * selected image visualizations
 * rejected image examples
----
-
-## 🧪 Demo Dataset
-
-The model was developed and evaluated using images from NASA's Perseverance rover (Mars 2020 mission), specifically NAVCAM (Navigation Camera) data.
-
-### Dataset Characteristics
-
-- Source: NASA PDS Imaging Atlas  
-- Camera: NAVCAM (left/right)  
-- Image type: mostly grayscale navigation images  
-- Resolution: typically ~1024×1024 (resized to 256×256 for training)  
-- Dataset size: ~50,000 images (filtered and deduplicated)  
-
-### Preprocessing
-
-- near-duplicate removal (perceptual hashing)  
-- grayscale normalization  
-- filtering of unusable frames (e.g., rover-dominant or ground-only images)  
-
-### Demo Data
-
-The repository includes a small sample dataset for demonstration purposes.
-
-Full experiments were conducted on a significantly larger dataset (~50k images), which is not included due to size constraints.
-
-### ⚠️ Reproducing Full-Scale Experiments
-
-To replicate results at full scale or extend the dataset, users must download additional NAVCAM images directly from the :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}.
-
-
-Due to bandwidth and storage limitations, the repository does not host the full dataset.
 
 ---
 
