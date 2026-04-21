@@ -29,16 +29,18 @@ This project implements an **onboard AI pipeline** that:
 
 ---
 
-## 📊 Results
+## 📊 Results shown below are generated on a 2k-image subset for demonstration purposes.
 ### Reconstruction Error Distribution
 
 ![Histogram](simulation_demo_2k/error_histogram.png)
+The distribution shows a clear long tail, enabling percentile-based thresholding.
 
 ### Example Outputs
 
 **Top anomalies (selected for transmission - 1%):**
 
 ![Anomalie](simulation_demo_2k/1_percent_Transmission.jpg)
+High-error samples correspond to visually distinct or rare scenes
 
 **Lowest-error images (rejected):**
 
