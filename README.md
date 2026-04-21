@@ -32,7 +32,7 @@ This project implements an **onboard AI pipeline** that:
 ## 📊 Results
 ### Reconstruction Error Distribution
 
-![Histogram](https://v102.vh.net.pl:2083/cpsess6332427468/viewer/home%2fvh12194%2fimages/error_histogram.png)
+![Histogram](simulation_demo_2k/error_histogram.png)
 
 ### Example Outputs
 
