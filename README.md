@@ -151,21 +151,32 @@ After execution:
 
 The model was developed and evaluated using images from NASA's Perseverance rover (Mars 2020 mission), specifically NAVCAM (Navigation Camera) data.
 
-Characteristics of the dataset:
-- Source: NASA PDS Imaging Atlas
-- Camera: NAVCAM (left/right)
-- Image type: mostly grayscale navigation images
-- Resolution: typically ~1024x1024 (resized to 256x256 for training)
-- Dataset size: ~50,000 images (filtered and deduplicated)
+### Dataset Characteristics
 
-Preprocessing steps included:
-- near-duplicate removal (perceptual hashing)
-- grayscale normalization
-- filtering of unusable frames (e.g., rover-dominant or ground-only images)
+- Source: NASA PDS Imaging Atlas  
+- Camera: NAVCAM (left/right)  
+- Image type: mostly grayscale navigation images  
+- Resolution: typically ~1024×1024 (resized to 256×256 for training)  
+- Dataset size: ~50,000 images (filtered and deduplicated)  
 
-The repository includes a **small sample dataset** for demonstration.
+### Preprocessing
 
-Full experiments were conducted on a significantly larger dataset (~50k images), not included due to size.
+- near-duplicate removal (perceptual hashing)  
+- grayscale normalization  
+- filtering of unusable frames (e.g., rover-dominant or ground-only images)  
+
+### Demo Data
+
+The repository includes a small sample dataset for demonstration purposes.
+
+Full experiments were conducted on a significantly larger dataset (~50k images), which is not included due to size constraints.
+
+### ⚠️ Reproducing Full-Scale Experiments
+
+To replicate results at full scale or extend the dataset, users must download additional NAVCAM images directly from the :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}.
+
+
+Due to bandwidth and storage limitations, the repository does not host the full dataset.
 
 ---
 
