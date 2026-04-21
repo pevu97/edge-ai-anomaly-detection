@@ -38,7 +38,7 @@ This project implements an **onboard AI pipeline** that:
 
 **Top anomalies (selected for transmission - 1%):**
 
-![Anomalies](https://v102.vh.net.pl:2083/cpsess6332427468/viewer/home%2fvh12194%2fimages/1%25%20Transmission.png)
+![Anomalies](simulation_demo_2k/1% Transmission.png)
 
 **Lowest-error images (rejected):**
 
