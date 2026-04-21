@@ -29,6 +29,30 @@ This project implements an **onboard AI pipeline** that:
 
 ---
 
+## 📊 Results
+### Reconstruction Error Distribution
+
+![Histogram](https://v102.vh.net.pl:2083/cpsess6332427468/viewer/home%2fvh12194%2fimages/error_histogram.png)
+
+### Example Outputs
+
+**Top anomalies (selected for transmission - 1%):**
+
+![Anomalies](https://v102.vh.net.pl:2083/cpsess6332427468/viewer/home%2fvh12194%2fimages/1%25%20Transmission.png)
+
+**Lowest-error images (rejected):**
+
+![Lowest](https://v102.vh.net.pl:2083/cpsess6332427468/viewer/home%2fvh12194%2fimages/Rejected%20Images%20with%20Lowest%20Reconstruction%20Error.png)
+
+**Random Low-error images (rejected):**
+![Random_low](https://v102.vh.net.pl:2083/cpsess6332427468/viewer/home%2fvh12194%2fimages/Randomly%20Selected%20Rejected%20Images%20with%20Low%20Reconstruction%20Error.png)
+
+### Key Metrics
+
+- Inference throughput: ~11 images/sec  
+- Avg latency: ~0.088 s/image  
+- Data reduction: up to 99%
+
 ## ⚙️ Pipeline Overview
 
 ```
@@ -52,33 +76,6 @@ generate_report.py
   * 1%
 * Performance metrics (inference time, throughput)
 * Visual reports and plots
-
----
-
-## 📁 Project Structure
-
-```
-.
-├── data/
-├── inference results/
-    └── inference_records.json
-    └── inference_summary.json
-├── report/
-├── run_inference.py
-├── simulate_transmission.py
-├── generate_report.py
-├── requirements.txt
-│
-│   
-│
-├── ae_results/
-│   └── best_autoencoder.pth
-│
-└── simulation/
-    ├── results/
-    └── analysis/
-        └── report/
-```
 
 ---
 
@@ -130,29 +127,45 @@ python generate_report.py
 
 After execution:
 
-### `simulation/results/`
+### `inference results/`
 
 * inference_records.json
 * inference_summary.json
+
+### `simulation results/`
 * scenario_10pct.csv
 * scenario_5pct.csv
 * scenario_1pct.csv
 * selected image folders
+* transmission_summary.json
 
-### `simulation/analysis/report/`
+### `report/`
 
 * histograms
 * comparison tables
 * selected image visualizations
 * rejected image examples
-
 ---
 
 ## 🧪 Demo Dataset
 
+The model was developed and evaluated using images from NASA's Perseverance rover (Mars 2020 mission), specifically NAVCAM (Navigation Camera) data.
+
+Characteristics of the dataset:
+- Source: NASA PDS Imaging Atlas
+- Camera: NAVCAM (left/right)
+- Image type: mostly grayscale navigation images
+- Resolution: typically ~1024x1024 (resized to 256x256 for training)
+- Dataset size: ~50,000 images (filtered and deduplicated)
+
+Preprocessing steps included:
+- near-duplicate removal (perceptual hashing)
+- grayscale normalization
+- filtering of unusable frames (e.g., rover-dominant or ground-only images)
+
 The repository includes a **small sample dataset** for demonstration.
 
-Full experiments were conducted on a significantly larger dataset (~20k images), not included due to size.
+Full experiments were conducted on a significantly larger dataset (~50k images), not included due to size.
 
 ---
 
@@ -187,7 +200,7 @@ Example results:
 
 ## 📬 Contact
 
-Author: **[Pevu]**
+Author: **[Patryk Wieczorek]**
 GitHub: https://github.com/pevu97
 
 ---
